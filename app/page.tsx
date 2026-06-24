@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main
       className="min-h-screen"
-      style={{ background: "linear-gradient(180deg, #0d0a1a 0%, #1a1330 50%, #0d0a1a 100%)" }}
+      style={{ background: "linear-gradient(180deg, #060a14 0%, #0d1628 40%, #060a14 100%)" }}
     >
       <Hero />
       <EventDetails />

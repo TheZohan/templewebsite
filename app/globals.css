@@ -3,18 +3,22 @@
 @theme inline {
   --font-sans: var(--font-heebo), "Heebo", "Arial Hebrew", sans-serif;
 
-  /* Ethereal + chalkboard color palette */
-  --color-mystic-900: #0d0a1a;
-  --color-mystic-800: #1a1330;
-  --color-mystic-700: #2a1f4a;
-  --color-mystic-600: #3d2f6b;
+  /* Navy + gold palette (matching poster) */
+  --color-mystic-900: #060a14;
+  --color-mystic-800: #0d1628;
+  --color-mystic-700: #152038;
+  --color-mystic-600: #1e2f52;
   --color-dust-400: #c4a882;
   --color-dust-300: #d9c4a0;
   --color-dust-100: #f5ede0;
   --color-gold-400: #d4a843;
   --color-gold-300: #e8c96a;
-  --color-sage-400: #7a9e7e;
   --color-chalk: #f0e8d8;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+  50%       { opacity: 1; transform: scale(1)   rotate(20deg); }
 }
 
 html {

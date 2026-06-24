@@ -46,7 +46,7 @@
 
 ## 7. Integration & verification
 
-- [ ] 7.1 Local end-to-end test: submit a valid registration and confirm a row appears in the Google Sheet
+- [x] 7.1 Local end-to-end test: submit a valid registration and confirm a row appears in the Google Sheet
 - [x] 7.2 Test validation/error paths (missing fields, bad email, unchecked consents, simulated Sheets failure)
 - [ ] 7.3 Deploy to Railway with env vars and run a production smoke test
 - [ ] 7.4 Replace placeholder copy with organizer-confirmed Hebrew text and resolve open questions (location, payment instructions, couple-flow)

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { copy } from "@/lib/copy";
 import { EtherealBlobs } from "./EtherealBlobs";
+import { Sparkles } from "./Sparkles";
 
 function FadeUp({
   delay = 0,
@@ -30,6 +31,7 @@ export function Hero() {
   return (
     <section className="chalk-bg relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 py-24">
       <EtherealBlobs />
+      <Sparkles />
 
       {/* Chalkboard-style top rule */}
       <motion.div
@@ -60,7 +62,10 @@ export function Hero() {
 
         {/* Main title */}
         <FadeUp delay={0.15} className="mb-4">
-          <h1 className="text-5xl sm:text-7xl font-bold leading-tight text-amber-200">
+          <h1
+            className="text-5xl sm:text-7xl font-bold leading-tight text-amber-200"
+            style={{ textShadow: "0 0 30px rgba(212,168,67,0.7), 0 0 60px rgba(212,168,67,0.3)" }}
+          >
             {copy.event.title}
           </h1>
         </FadeUp>
