@@ -84,7 +84,7 @@ export function EventDetails() {
             <div className="text-3xl mb-3">✨</div>
             <p className="text-xs text-amber-400/70 uppercase tracking-wider mb-1">מה מחכה לנו</p>
             <p className="text-stone-300 leading-relaxed">
-              חקר מיני · תרגילי גוף · ריקוד · משחק ואינטימיות
+              חיבורים | הנחיה מרגשת | מרחב חקירה מאפשר
             </p>
           </Card>
         </div>

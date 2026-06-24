@@ -9,7 +9,7 @@ const heebo = Heebo({
 });
 
 export const metadata: Metadata = {
-  title: "בית הספר שחזר — הטמפל",
+  title: "Back to High School Temple",
   description: "אירוע קהילתי מיוחד — 4 בספטמבר 2026",
 };
 
