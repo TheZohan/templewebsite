@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { copy } from "@/lib/copy";
 import { EtherealBlobs } from "./EtherealBlobs";
 
@@ -27,57 +28,80 @@ function FadeUp({
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 py-24">
+    <section className="chalk-bg relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 py-24">
       <EtherealBlobs />
 
-      {/* Decorative top line */}
+      {/* Chalkboard-style top rule */}
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent origin-center"
+        className="absolute top-0 inset-x-0 h-[2px] origin-center"
+        style={{
+          background: "linear-gradient(90deg, transparent, rgba(240,232,216,0.3) 30%, rgba(212,168,67,0.5) 50%, rgba(240,232,216,0.3) 70%, transparent)",
+        }}
       />
 
       <div className="relative z-10 text-center max-w-3xl mx-auto">
-        {/* Eyebrow */}
-        <FadeUp delay={0} className="text-amber-300/80 text-sm font-medium tracking-widest uppercase mb-6">
-          {copy.event.subtitle}
+        {/* Team photo */}
+        <FadeUp delay={0} className="mb-8 flex justify-center">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden"
+            style={{ boxShadow: "0 0 60px rgba(212,168,67,0.2), 0 0 0 1px rgba(212,168,67,0.15)" }}
+          >
+            <Image
+              src="/team.png"
+              alt="צוות הטמפל"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </FadeUp>
 
         {/* Main title */}
-        <FadeUp delay={0.15} className="mb-8">
-          <h1
-            className="text-5xl sm:text-7xl font-bold leading-tight"
-            style={{
-              background:
-                "linear-gradient(135deg, #f5ede0 0%, #d4a843 50%, #c4a882 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
+        <FadeUp delay={0.15} className="mb-4">
+          <h1 className="text-5xl sm:text-7xl font-bold leading-tight text-amber-200">
             {copy.event.title}
           </h1>
         </FadeUp>
 
         {/* Date & time */}
-        <FadeUp delay={0.3} className="mb-12">
-          <div className="flex items-center justify-center gap-4 text-stone-300 text-lg">
+        <FadeUp delay={0.3} className="mb-10">
+          <div className="flex items-center justify-center gap-4 text-stone-300/80 text-base">
             <span>{copy.event.date}</span>
-            <span className="w-1 h-1 rounded-full bg-amber-400/60" aria-hidden="true" />
+            <span className="w-1 h-1 rounded-full bg-amber-400/50" aria-hidden="true" />
             <span>{copy.event.time}</span>
           </div>
         </FadeUp>
 
         {/* Description */}
-        <FadeUp delay={0.45} className="mb-16">
+        <FadeUp delay={0.4} className="mb-8">
           <p className="text-lg text-stone-300/90 leading-relaxed max-w-xl mx-auto">
             {copy.event.description}
           </p>
         </FadeUp>
 
+        {/* Theme pills */}
+        <FadeUp delay={0.5} className="mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {copy.event.pills.map((pill) => (
+              <span
+                key={pill}
+                className="px-3 py-1 rounded-full text-sm"
+                style={{
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(240,232,216,0.15)",
+                  color: "#d9c4a0",
+                }}
+              >
+                {pill}
+              </span>
+            ))}
+          </div>
+        </FadeUp>
+
         {/* CTA */}
-        <FadeUp delay={0.6}>
+        <FadeUp delay={0.65}>
           <motion.a
             href="#registration"
             whileHover={{ scale: 1.04 }}
@@ -102,18 +126,8 @@ export function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
         aria-hidden="true"
       >
-        <svg
-          className="w-6 h-6 text-amber-400/40 animate-bounce"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M19 9l-7 7-7-7"
-          />
+        <svg className="w-6 h-6 text-amber-400/40 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
         </svg>
       </motion.div>
     </section>

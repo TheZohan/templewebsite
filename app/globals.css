@@ -3,7 +3,7 @@
 @theme inline {
   --font-sans: var(--font-heebo), "Heebo", "Arial Hebrew", sans-serif;
 
-  /* Ethereal color palette */
+  /* Ethereal + chalkboard color palette */
   --color-mystic-900: #0d0a1a;
   --color-mystic-800: #1a1330;
   --color-mystic-700: #2a1f4a;
@@ -14,10 +14,7 @@
   --color-gold-400: #d4a843;
   --color-gold-300: #e8c96a;
   --color-sage-400: #7a9e7e;
-  --color-rose-300: #d4847a;
-
-  --color-background: var(--mystic-900);
-  --color-foreground: var(--dust-100);
+  --color-chalk: #f0e8d8;
 }
 
 html {
@@ -28,6 +25,30 @@ body {
   background: var(--color-mystic-900);
   color: var(--color-dust-100);
   font-family: var(--font-sans);
+}
+
+/* Subtle chalkboard grid texture on hero */
+.chalk-bg {
+  background-image:
+    linear-gradient(rgba(240, 232, 216, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240, 232, 216, 0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Chalk-style hand-drawn underline */
+.chalk-underline {
+  position: relative;
+}
+.chalk-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4a843 20%, #e8c96a 50%, #d4a843 80%, transparent);
+  border-radius: 2px;
+  opacity: 0.7;
 }
 
 @media (prefers-reduced-motion: reduce) {
