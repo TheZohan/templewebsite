@@ -18,7 +18,7 @@ export default function Home() {
           <span className="text-stone-500">{copy.team.label}:</span>{" "}
           {copy.team.members.join(" · ")}
         </p>
-        <p>© 2026 הטמפל · כל הזכויות שמורות</p>
+        <p>© 2026 {copy.org} · כל הזכויות שמורות</p>
       </footer>
     </main>
   );

@@ -45,8 +45,18 @@ export function Hero() {
       />
 
       <div className="relative z-10 text-center max-w-3xl mx-auto">
+        {/* Org name */}
+        <FadeUp delay={0} className="mb-6">
+          <span
+            className="text-sm tracking-widest"
+            style={{ color: "#d4a843", letterSpacing: "0.2em" }}
+          >
+            {copy.org}
+          </span>
+        </FadeUp>
+
         {/* Team photo */}
-        <FadeUp delay={0} className="mb-8 flex justify-center">
+        <FadeUp delay={0.1} className="mb-8 flex justify-center">
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden"
             style={{ boxShadow: "0 0 60px rgba(212,168,67,0.2), 0 0 0 1px rgba(212,168,67,0.15)" }}
           >
@@ -61,7 +71,7 @@ export function Hero() {
         </FadeUp>
 
         {/* Main title */}
-        <FadeUp delay={0.15} className="mb-4">
+        <FadeUp delay={0.2} className="mb-4">
           <h1
             className="text-5xl sm:text-7xl font-bold leading-tight text-amber-200"
             style={{ textShadow: "0 0 30px rgba(212,168,67,0.7), 0 0 60px rgba(212,168,67,0.3)" }}

@@ -1,4 +1,6 @@
 export const copy = {
+  org: "טמפל חמודימות",
+
   event: {
     title: "Back to High School Temple",
     subtitle: "",
