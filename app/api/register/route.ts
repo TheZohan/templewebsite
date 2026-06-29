@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
     const sheets = google.sheets({ version: "v4", auth });
 
     const row = [
-      new Date().toISOString(),
+      new Date().toLocaleString("sv-SE", { timeZone: "Asia/Jerusalem" }),
       data.firstName,
       data.lastName,
       data.email,
