@@ -89,11 +89,16 @@ export function Hero() {
           </div>
         </FadeUp>
 
-        {/* Description */}
+        {/* Teasers */}
         <FadeUp delay={0.4} className="mb-8">
-          <p className="text-lg text-stone-300/90 leading-relaxed max-w-xl mx-auto">
-            {copy.event.description}
-          </p>
+          <ul className="space-y-2 text-base text-stone-300/85">
+            {copy.event.teasers.map((teaser) => (
+              <li key={teaser} className="flex items-center justify-center gap-2">
+                <span style={{ color: "#d4a843" }}>✦</span>
+                {teaser}
+              </li>
+            ))}
+          </ul>
         </FadeUp>
 
         {/* Theme pills */}
