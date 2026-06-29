@@ -95,12 +95,12 @@ export function EventDetails() {
             <p className="text-xs text-amber-400/70 uppercase tracking-wider mb-4">מחיר השתתפות</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
               <div>
-                <p className="text-4xl font-bold text-amber-300">121₪</p>
+                <p className="text-4xl font-bold text-amber-300">{copy.pricing.single.replace(" ליחיד", "")}</p>
                 <p className="text-stone-400 mt-1">ליחיד</p>
               </div>
               <div className="hidden sm:block w-px h-16 bg-amber-400/20" aria-hidden="true" />
               <div>
-                <p className="text-4xl font-bold text-amber-300">222₪</p>
+                <p className="text-4xl font-bold text-amber-300">{copy.pricing.couple.replace(" לזוג", "")}</p>
                 <p className="text-stone-400 mt-1">לזוג</p>
               </div>
             </div>
