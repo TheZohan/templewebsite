@@ -85,7 +85,7 @@ export function Hero() {
           <div className="flex items-center justify-center gap-4 text-stone-300/80 text-base">
             <span>{copy.event.date}</span>
             <span className="w-1 h-1 rounded-full bg-amber-400/50" aria-hidden="true" />
-            <span>{copy.event.time}</span>
+            <span dir="ltr">{copy.event.time}</span>
           </div>
         </FadeUp>
 
