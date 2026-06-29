@@ -44,10 +44,13 @@ export function RegistrationForm() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<RegistrationData>({
     resolver: zodResolver(registrationSchema),
   });
+
+  const priorExperience = watch("priorExperience");
 
   async function onSubmit(data: RegistrationData) {
     setServerError(null);
@@ -254,6 +257,42 @@ export function RegistrationForm() {
               {...register("volunteer")}
             />
           </div>
+
+          {/* Prior experience */}
+          <fieldset>
+            <legend className="block text-sm font-medium text-stone-300 mb-2">
+              {copy.form.fields.priorExperience.label}
+            </legend>
+            <div className="flex flex-col gap-2">
+              {copy.form.fields.priorExperience.options.map((o) => (
+                <label key={o.value} className="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    type="radio"
+                    value={o.value}
+                    {...register("priorExperience")}
+                    className="h-4 w-4 shrink-0 accent-amber-400 cursor-pointer"
+                  />
+                  <span className="text-sm text-stone-300 group-hover:text-stone-100 transition-colors">
+                    {o.label}
+                  </span>
+                </label>
+              ))}
+            </div>
+            {priorExperience === "yes" && (
+              <div className="mt-3">
+                <Label htmlFor="priorExperienceWhich">
+                  {copy.form.fields.priorExperience.whichLabel}
+                </Label>
+                <input
+                  id="priorExperienceWhich"
+                  type="text"
+                  placeholder={copy.form.fields.priorExperience.whichPlaceholder}
+                  className={inputClass}
+                  {...register("priorExperienceWhich")}
+                />
+              </div>
+            )}
+          </fieldset>
 
           {/* Notes */}
           <div>

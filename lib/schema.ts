@@ -12,6 +12,8 @@ export const registrationSchema = z.object({
   health: z.string().optional(),
   natureElement: z.string().optional(),
   volunteer: z.string().optional(),
+  priorExperience: z.enum(["yes", "no"]).optional(),
+  priorExperienceWhich: z.string().optional(),
   notes: z.string().optional(),
   consent0: z.literal(true, e.consentRequired),
   consent1: z.literal(true, e.consentRequired),

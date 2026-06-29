@@ -67,6 +67,7 @@ export async function POST(req: NextRequest) {
       data.health ?? "",
       data.natureElement ?? "",
       data.volunteer ?? "",
+      data.priorExperience === "yes" ? `כן — ${data.priorExperienceWhich ?? ""}` : data.priorExperience === "no" ? "לא" : "",
       data.notes ?? "",
       // Consent summary (all true at this point)
       "הסכים לכל התנאים",
