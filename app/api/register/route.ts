@@ -64,6 +64,7 @@ export async function POST(req: NextRequest) {
       data.email,
       data.gender,
       data.phone,
+      data.coupleRegistration === "couple" ? `זוג — ${data.partnerName ?? ""}` : "יחיד/ה",
       data.health ?? "",
       data.natureElement ?? "",
       data.volunteer ?? "",

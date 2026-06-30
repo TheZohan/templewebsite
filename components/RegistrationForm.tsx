@@ -51,6 +51,7 @@ export function RegistrationForm() {
   });
 
   const priorExperience = watch("priorExperience");
+  const coupleRegistration = watch("coupleRegistration");
 
   async function onSubmit(data: RegistrationData) {
     setServerError(null);
@@ -215,6 +216,45 @@ export function RegistrationForm() {
               <FieldError message={errors.phone?.message} />
             </div>
           </div>
+
+          {/* Couple registration */}
+          <fieldset>
+            <legend className="block text-sm font-medium text-stone-300 mb-2">
+              {copy.form.fields.coupleRegistration.label}
+            </legend>
+            <div className="flex flex-col gap-2">
+              {copy.form.fields.coupleRegistration.options.map((o) => (
+                <label key={o.value} className="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    type="radio"
+                    value={o.value}
+                    {...register("coupleRegistration")}
+                    className="h-4 w-4 shrink-0 accent-amber-400 cursor-pointer"
+                  />
+                  <span className="text-sm text-stone-300 group-hover:text-stone-100 transition-colors">
+                    {o.label}
+                  </span>
+                </label>
+              ))}
+            </div>
+            {coupleRegistration === "couple" && (
+              <div className="mt-3 space-y-2">
+                <Label htmlFor="partnerName">
+                  {copy.form.fields.coupleRegistration.partnerLabel}
+                </Label>
+                <input
+                  id="partnerName"
+                  type="text"
+                  placeholder={copy.form.fields.coupleRegistration.partnerPlaceholder}
+                  className={inputClass}
+                  {...register("partnerName")}
+                />
+                <p className="text-xs text-amber-400/70 mt-1">
+                  💡 {copy.form.fields.coupleRegistration.partnerNote}
+                </p>
+              </div>
+            )}
+          </fieldset>
 
           {/* Health */}
           <div>

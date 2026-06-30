@@ -61,6 +61,16 @@ export const copy = {
         label: "טלפון",
         placeholder: "05X-XXXXXXX",
       },
+      coupleRegistration: {
+        label: "הרשמה",
+        options: [
+          { value: "solo", label: "נרשם/ת כיחיד/ה" },
+          { value: "couple", label: "נרשמים כזוג" },
+        ],
+        partnerLabel: "שם הזוג שלך",
+        partnerPlaceholder: "שם מלא של בן/בת הזוג",
+        partnerNote: "כל אחד/ת צריך/ה להירשם בנפרד כדי לחתום על ההסכמות",
+      },
       health: {
         label: "טריגרים, רגישויות או מידע רפואי רלוונטי",
         placeholder:
