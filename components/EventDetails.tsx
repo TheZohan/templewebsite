@@ -92,19 +92,28 @@ export function EventDetails() {
         {/* Pricing */}
         <Card delay={0.3}>
           <div className="text-center">
-            <p className="text-xs text-amber-400/70 uppercase tracking-wider mb-4">מחיר השתתפות</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-              <div>
-                <p className="text-4xl font-bold text-amber-300">{copy.pricing.single.replace(" ליחיד", "")}</p>
-                <p className="text-stone-400 mt-1">ליחיד</p>
+            <p className="text-xs text-amber-400/70 uppercase tracking-wider mb-5">מחיר השתתפות</p>
+            <div className="grid grid-cols-2 gap-4 mb-2">
+              {/* Early bird */}
+              <div className="rounded-xl p-4" style={{ background: "rgba(212,168,67,0.08)", border: "1px solid rgba(212,168,67,0.2)" }}>
+                <p className="text-xs text-amber-400 font-semibold mb-1">{copy.pricing.earlyBird.label}</p>
+                <p className="text-xs text-stone-500 mb-3">{copy.pricing.earlyBird.spots}</p>
+                <p className="text-2xl font-bold text-amber-300">{copy.pricing.earlyBird.single}</p>
+                <p className="text-xs text-stone-400 mb-2">{copy.pricing.singleLabel}</p>
+                <p className="text-2xl font-bold text-amber-300">{copy.pricing.earlyBird.couple}</p>
+                <p className="text-xs text-stone-400">{copy.pricing.coupleLabel}</p>
               </div>
-              <div className="hidden sm:block w-px h-16 bg-amber-400/20" aria-hidden="true" />
-              <div>
-                <p className="text-4xl font-bold text-amber-300">{copy.pricing.couple.replace(" לזוג", "")}</p>
-                <p className="text-stone-400 mt-1">לזוג</p>
+              {/* Regular */}
+              <div className="rounded-xl p-4" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
+                <p className="text-xs text-stone-400 font-semibold mb-1">{copy.pricing.regular.label}</p>
+                <p className="text-xs text-stone-500 mb-3">{copy.pricing.regular.spots}</p>
+                <p className="text-2xl font-bold text-stone-300">{copy.pricing.regular.single}</p>
+                <p className="text-xs text-stone-400 mb-2">{copy.pricing.singleLabel}</p>
+                <p className="text-2xl font-bold text-stone-300">{copy.pricing.regular.couple}</p>
+                <p className="text-xs text-stone-400">{copy.pricing.coupleLabel}</p>
               </div>
             </div>
-            <p className="text-stone-500 text-sm mt-6">{copy.pricing.note}</p>
+            <p className="text-stone-500 text-sm mt-4">{copy.pricing.note}</p>
           </div>
         </Card>
       </div>

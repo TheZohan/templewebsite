@@ -22,8 +22,20 @@ export const copy = {
   },
 
   pricing: {
-    single: "150₪ ליחיד",
-    couple: "280₪ לזוג",
+    earlyBird: {
+      label: "הרשמה מוקדמת",
+      spots: "20 מקומות",
+      single: "220₪",
+      couple: "400₪",
+    },
+    regular: {
+      label: "הרשמה מאוחרת",
+      spots: "40 מקומות",
+      single: "260₪",
+      couple: "460₪",
+    },
+    singleLabel: "ליחיד/ה",
+    coupleLabel: "לזוג",
     note: "התשלום יבוצע לאחר ההרשמה — פרטים יישלחו במייל האישור",
   },
 
@@ -124,8 +136,8 @@ export const copy = {
     paymentTitle: "פרטי תשלום",
     paymentBody:
       "פרטי התשלום (ביט / העברה בנקאית) יישלחו אליכם במייל בקרוב. ההרשמה תאושר לאחר קבלת התשלום.",
-    priceSingle: "מחיר ליחיד: 150₪",
-    priceCouple: "מחיר לזוג: 280₪",
+    priceSingle: "יחיד/ה: מוקדמת 220₪ / מאוחרת 260₪",
+    priceCouple: "זוג: מוקדמת 400₪ / מאוחרת 460₪",
   },
 
   errors: {
